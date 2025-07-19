@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STYLE - Tienda de Ropa</title>
+  <style>
+    /* Tu CSS original sin cambios */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x400/?fashion,street') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .intro {
+      padding: 2rem;
+      text-align: center;
+      background-color: #e0fdf4;
+      color: #111;
+    }
+
+    .cards {
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      width: 250px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .carousel {
+      padding: 3rem 0;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .slider {
+      width: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+      position: relative;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      display: none;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .prev, .next {
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      user-select: none;
+    }
+
+    .prev { left: 5%; }
+    .next { right: 5%; }
+
+    section#video {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    iframe {
+      max-width: 90%;
+      border-radius: 10px;
+      height: 315px;
+      margin-bottom: 1rem;
+    }
+
+    .contacto-elegante {
+      background-color: #e0fdf4;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .contacto-elegante h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .contacto-elegante p {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .contacto-elegante form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .contacto-elegante .form-group {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .contacto-elegante label {
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .contacto-elegante input,
+    .contacto-elegante textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      resize: none;
+    }
+
+    .contacto-elegante button {
+      background-color: #1abc9c;
+      color: white;
+      padding: 0.9rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contacto-elegante button:hover {
+      background-color: #159c87;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding-top: 1rem;
+    }
+
+    footer a {
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>STYLE</h1>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#video">Lookbook</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="intro">
+    <h2>Bienvenido a STYLE</h2>
+    <p>Descubre la mejor moda urbana para destacar tu estilo personal. Nuestra tienda ofrece prendas únicas, cómodas y a la moda. Explora, compra y luce increíble todos los días.</p>
+  </section>
+
+  <section id="inicio" class="hero">
+    <h2>Moda Urbana 2025</h2>
+    <p>Explora las últimas tendencias con estilo único.</p>
+    <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-8c50-622f-bdd3-dba5ca232283/raw?se=2025-07-19T02%3A51%3A46Z&sp=r&sv=2024-08-04&sr=b&scid=7f7c2c50-ac2c-50a5-bf6f-e6cd8cd3f1e4&skoid=bbd22fc4-f881-4ea4-b2f3-c12033cf6a8b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-18T03%3A22%3A27Z&ske=2025-07-19T03%3A22%3A27Z&sks=b&skv=2024-08-04&sig=4dbkmyRg70flSuaidxo2LjTXjuO3fQZdz5m6svDLqe0%3D" alt="Conjunto Beige" />
+  </section>
+
+  <section id="productos" class="cards">
+    <h2>Nuestros Productos</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/fe/44/7a/fe447a115d651288b27e33f7badcb2a0.jpg" alt="Conjunto Beige" />
+        <h3>Conjunto Beige</h3>
+        <p>S/.120</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/05/51/70/055170c2c513dbaeeaa277da6ad9314c.jpg" alt="Conjunto Palo Rosa" />
+        <h3>Conjunto Palo Rosa</h3>
+        <p>S/.110</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/ca/8e/ab/ca8eabcbfe9279d70ad82fbc951be120.jpg" alt="Buzo Cargo Plomo" />
+        <h3>Buzo Cargo Plomo</h3>
+        <p>S/.130</p>
+        <button>Comprar</button>
+      </div>
+       <div class="card">
+        <img src="https://i.pinimg.com/736x/a7/5a/f0/a75af0c42e1ec7fa756b58a4d0404290.jpg" alt="Pantalón" />
+        <h3>Buzo de pareja Negro</h3>
+        <p>S/.150</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/b4/b6/ac/b4b6acbf1f501e22d7fd8622f88e99e6.jpg" alt="Pantalón" />
+        <h3>Buzo de pareja</h3>
+        <p>S/.150</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/a7/83/e9/a783e9dd4225b7da3574819274dabd6d.jpg" alt="Pantalón" />
+        <h3>Buzo overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/0b/09/a8/0b09a8311230c726839cdeb07d8cef56.jpg" alt="Pantalón" />
+        <h3>Conjunto overside</h3>
+        <p>S/.90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/ff/77/0e/ff770e559124e4e729fa061c9ab033f9.jpg" alt="Pantalón" />
+        <h3>Polera overside</h3>
+        <p>S/.90</p>
+        <button>Comprar</button>
+      </div>
+       <div class="card">
+        <img src="https://i.pinimg.com/736x/7d/7a/ae/7d7aaeec1f2f0d4bac23f93bd812ce83.jpg" alt="Pantalón" />
+        <h3>Pantalon overside</h3>
+        <p>S/.90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/ab/fa/46/abfa466a999ed349ccaa268b1e0792d0.jpg" alt="Pantalón" />
+        <h3>Pantalon overside</h3>
+        <p>S/.90</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/00/0a/30/000a3016cdcdf3009de6bedab73260f1.jpg" alt="Pantalón" />
+        <h3>Pantalon Jean Overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://img.fantaskycdn.com/92d33be2b0dd0ea1deb7e18cc04e9f6b_2056x.jpeg" alt="Pantalón" />
+        <h3>Pantalon Jean Arcoiris</h3>
+        <p>S/.110</p>
+        <button>Comprar</button>
+      </div>
+       <div class="card">
+        <img src="https://i.pinimg.com/1200x/90/9a/4d/909a4db92a54139d65aa7d33c04d3309.jpg" alt="Pantalón" />
+        <h3>Pantalon Overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/57/06/0b/57060bb7bb3e13a36e14325a34aefe21.jpg" alt="Pantalón" />
+        <h3>Pantalon Overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+       <div class="card">
+        <img src="https://i.pinimg.com/736x/46/a2/f9/46a2f96619c285db73aed55c5547e96c.jpg" alt="Pantalón" />
+        <h3>Pantalon Overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/00/4a/cf/004acf79e95c21d4f8322b4d7fc86b17.jpg" alt="Pantalón" />
+        <h3>Pantalon Overside</h3>
+        <p>S/.100</p>
+        <button>Comprar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="carousel">
+    <h2>Descubre el Estilo</h2>
+    <div class="slider">
+      <img src="https://i.pinimg.com/1200x/8d/a8/f2/8da8f286cf5c2292b8a320d6c98430b6.jpg" class="slide active" alt="Estilo 1" />
+      <img src="https://i.pinimg.com/1200x/29/5c/fc/295cfc112c8ae496bc7d9a6a592bc6bd.jpg" class="slide" alt="Estilo 2" />
+      <img src="https://i.pinimg.com/1200x/35/33/f4/3533f44c64cfd84e93aa7b82bfb4b052.jpg" class="slide" alt="Estilo 3" />
+      <img src="https://i.pinimg.com/1200x/3a/fd/7e/3afd7e152fbb4ab3940107ff46916b78.jpg" class="slide" alt="Estilo 4" />
+      <img src="https://i.pinimg.com/736x/a0/2e/da/a02eda41dd5206bd013d161e6c631f2a.jpg" class="slide" alt="Estilo 5" />
+      <img src="https://i.pinimg.com/736x/bc/18/f1/bc18f1f56be829e3d80fd27970ce9bf3.jpg" class="slide" alt="Estilo 6" />
+    </div>
+    <button class="prev" aria-label="Anterior">❮</button>
+    <button class="next" aria-label="Siguiente">❯</button>
+  </section>
+
+  <section id="video">
+    <h2>Video Lookbook</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/6hwziBNN8gk?si=1xvcEimMZRWE-EO3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/_A3OyQB2CVY?si=wYG92GA-IaFnj1kk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+
+  <section id="contacto" class="contacto-elegante">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes dudas o sugerencias? Escríbenos y te responderemos pronto.</p>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Tu nombre completo" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" placeholder="ejemplo@correo.com" required />
+      </div>
+      <div class="form-group">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+      </div>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Style. Todos los derechos reservados.</p>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#video">Lookbook</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+  </script>
+
+</body>
+</html>
